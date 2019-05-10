@@ -9,16 +9,15 @@ public class CartDaoTest {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-//		insert("하지승", "1Q84", 5);
-//		insert("하지원", "반지의제왕", 10);
-		getList();
+		insert(1L, 1L, 5);
+		insert(1L, 2L, 10);
 
 	}
 
-	public static void insert(String memberName, String bookTitle, long count) {
+	public static void insert(long memberNo, long bookNo, long count) {
 		CartVo vo = new CartVo();
-		vo.setMemberName(memberName);
-		vo.setBookTitle(bookTitle);
+		vo.setMemberNo(memberNo);
+		vo.setBookNo(bookNo);
 		vo.setCount(count);
 
 		new CartDao().insert(vo);
@@ -27,8 +26,8 @@ public class CartDaoTest {
 	public static void getList() {
 		List<CartVo> result = new CartDao().select();
 		for (CartVo vo : result) {
-			System.out.println("[책 제목 : " + vo.getBookTitle() + ", 수량:" + vo.getCount() + ", 구매 가격 : "
-					+ vo.getBookPrice() + "]");
+			System.out.println(
+					"[책 제목 : " + vo.getBookTitle() + ", 수량:" + vo.getCount() + ", 구매 가격 : " + vo.getBookPrice() + "]");
 		}
 	}
 }

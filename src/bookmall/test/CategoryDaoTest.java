@@ -9,10 +9,9 @@ public class CategoryDaoTest {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-//		insert("소설");
-//		insert("it");
-//		insert("수필");
-		getList();
+		insert("소설");
+		insert("it");
+		insert("수필");
 	}
 
 	public static void insert(String genre) {

@@ -8,9 +8,8 @@ import bookmall.vo.MemberVo;
 public class MemberDaoTest {
 
 	public static void main(String[] args) {
-//		insert("하지승", "010-1111-1111", "gkwltmd@naver.com", "1234");
-//		insert("하지원", "010-2222-2222", "gkwldnjs@naver.com", "5678");
-		getList();
+		insert("하지승", "010-1111-1111", "gkwltmd@naver.com", "1234");
+		insert("하지원", "010-2222-2222", "gkwldnjs@naver.com", "5678");
 	}
 
 	public static void insert(String name, String phonenum, String email, String passwd) {

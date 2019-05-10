@@ -16,13 +16,13 @@ public class BookDao {
 		PreparedStatement pstmt = null;
 		try {
 			conn = JDBC.getConnection();
-			String sql = "insert into book values(null,?,?,(select no from category where genre=?))";
+			String sql = "insert into book values(null,?,?,?)";
 
 			pstmt = conn.prepareStatement(sql);
 
 			pstmt.setString(1, vo.getTitle());
 			pstmt.setLong(2, vo.getPrice());
-			pstmt.setString(3, vo.getCategory());
+			pstmt.setLong(3, vo.getCategoryNo());
 
 			int count = pstmt.executeUpdate();
 			result = count == 1;
@@ -51,7 +51,7 @@ public class BookDao {
 		try {
 			conn = JDBC.getConnection();
 
-			String sql = "select a.title,a.price, b.genre from book a, category b where a.category_no=b.no";
+			String sql = "select title,price from book";
 
 			pstmt = conn.prepareStatement(sql);
 
@@ -61,7 +61,6 @@ public class BookDao {
 				BookVo vo = new BookVo();
 				vo.setTitle(rs.getString(1));
 				vo.setPrice(rs.getLong(2));
-				vo.setCategory(rs.getString(3));
 
 				result.add(vo);
 			}

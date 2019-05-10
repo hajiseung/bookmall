@@ -18,12 +18,12 @@ public class CartDao {
 
 		try {
 			conn = JDBC.getConnection();
-			String sql = "insert into cart values((select no from member where name=?),(select no from book where title=?), ?)";
+			String sql = "insert into cart values(?,?,?)";
 
 			pstmt = conn.prepareStatement(sql);
 
-			pstmt.setString(1, vo.getMemberName());
-			pstmt.setString(2, vo.getBookTitle());
+			pstmt.setLong(1, vo.getMemberNo());
+			pstmt.setLong(2, vo.getBookNo());
 			pstmt.setLong(3, vo.getCount());
 
 			int count = pstmt.executeUpdate();

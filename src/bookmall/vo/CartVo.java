@@ -4,9 +4,8 @@ public class CartVo {
 	private long memberNo;
 	private long bookNo;
 	private long count;
-	private String bookTitle;
 	private long bookPrice;
-	private String memberName;
+	private String bookTitle;
 
 	public long getMemberNo() {
 		return memberNo;
@@ -32,14 +31,6 @@ public class CartVo {
 		this.count = count;
 	}
 
-	public String getBookTitle() {
-		return bookTitle;
-	}
-
-	public void setBookTitle(String bookTitle) {
-		this.bookTitle = bookTitle;
-	}
-
 	public long getBookPrice() {
 		return bookPrice;
 	}
@@ -48,18 +39,18 @@ public class CartVo {
 		this.bookPrice = bookPrice;
 	}
 
-	public String getMemberName() {
-		return memberName;
+	public String getBookTitle() {
+		return bookTitle;
 	}
 
-	public void setMemberName(String memberName) {
-		this.memberName = memberName;
+	public void setBookTitle(String bookTitle) {
+		this.bookTitle = bookTitle;
 	}
 
 	@Override
 	public String toString() {
-		return "CartVo [memberNo=" + memberNo + ", bookNo=" + bookNo + ", count=" + count + ", bookTitle=" + bookTitle
-				+ ", bookPrice=" + bookPrice + ", memberName=" + memberName + "]";
+		return "CartVo [memberNo=" + memberNo + ", bookNo=" + bookNo + ", count=" + count + ", bookPrice=" + bookPrice
+				+ ", bookTitle=" + bookTitle + "]";
 	}
 
 }

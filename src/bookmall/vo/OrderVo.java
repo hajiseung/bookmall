@@ -1,6 +1,6 @@
 package bookmall.vo;
 
-public class PurchaseVo {
+public class OrderVo {
 	private long no;
 	private String orderNo;
 	private long price;
@@ -8,6 +8,33 @@ public class PurchaseVo {
 	private long memberNo;
 	private String memberName;
 	private String email;
+	private long bookNo;
+	private long count;
+	private String bookName;
+
+	public String getBookName() {
+		return bookName;
+	}
+
+	public void setBookName(String bookName) {
+		this.bookName = bookName;
+	}
+
+	public long getCount() {
+		return count;
+	}
+
+	public void setCount(long count) {
+		this.count = count;
+	}
+
+	public long getBookNo() {
+		return bookNo;
+	}
+
+	public void setBookNo(long bookNo) {
+		this.bookNo = bookNo;
+	}
 
 	public String getEmail() {
 		return email;
@@ -68,7 +95,8 @@ public class PurchaseVo {
 	@Override
 	public String toString() {
 		return "PurchaseVo [no=" + no + ", orderNo=" + orderNo + ", price=" + price + ", place=" + place + ", memberNo="
-				+ memberNo + ", memberName=" + memberName + ", email=" + email + "]";
+				+ memberNo + ", memberName=" + memberName + ", email=" + email + ", bookNo=" + bookNo + ", count="
+				+ count + ", bookName=" + bookName + "]";
 	}
 
 }
